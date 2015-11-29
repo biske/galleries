@@ -15,7 +15,7 @@
 <h3>Slike:</h3>
 <ul>
   <% @gallery.images.each do |image| %>
-    <li><%= image.file %></li>
+    <li><%= image_tag image.file %></li>
   <% end %>
 </ul>
 
