@@ -10,5 +10,14 @@
   <%= @gallery.description %>
 </p>
 
+<hr />
+
+<h3>Slike:</h3>
+<ul>
+  <% @gallery.images.each do |image| %>
+    <li><%= image.file %></li>
+  <% end %>
+</ul>
+
 <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
 <%= link_to 'Back', galleries_path %>

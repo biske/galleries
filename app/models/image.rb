@@ -1,5 +1,5 @@
 class Image < ActiveRecord::Base
   belongs_to :gallery
 
-  mount_uploader :file, FileUploader
+  # mount_uploader :file, FileUploader
 end

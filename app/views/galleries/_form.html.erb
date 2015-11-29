@@ -19,6 +19,15 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+
+  <%= f.fields_for :images do |images_form| %>
+    <div class="field">
+      <%= images_form.check_box :_destroy%>
+      <%= images_form.label :file %><br>
+      <%= images_form.text_field :file %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
