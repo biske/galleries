@@ -23,7 +23,6 @@
   <%= f.fields_for :images do |images_form| %>
     <% if images_form.object.new_record? %>
       <div class="field">
-        <%= images_form.check_box :_destroy%>
         <%= images_form.label :file %><br>
         <%= images_form.file_field :file %>
       </div>
