@@ -1,48 +1,6 @@
 <h1>Editing Gallery</h1>
 
-<%= form_for(@gallery) do |f| %>
-  <% if @gallery.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@gallery.errors.count, "error") %> prohibited this gallery from being saved:</h2>
-
-      <ul>
-      <% @gallery.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-
-  <%= f.fields_for :images do |images_form| %>
-    <% if images_form.object.new_record? %>
-      <div class="field">
-        <%= images_form.check_box :_destroy%>
-        <%= images_form.label :file %><br>
-        <%= images_form.file_field :file %>
-      </div>
-    <%else %>
-      <div class="field">
-        <%= images_form.check_box :_destroy%>
-        <%= images_form.label :file %><br>
-        <%#= images_form.file_field :file %>
-        <%= image_tag images_form.object.file %>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<%= render 'form' %>
 
 
 <%= link_to 'Show', @gallery %> |

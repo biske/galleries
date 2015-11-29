@@ -21,7 +21,9 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/1/edit
   def edit
-    @gallery.images.new
+    2.times do |i|
+      @gallery.images.new
+    end
   end
 
   # POST /galleries
